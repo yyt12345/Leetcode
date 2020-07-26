@@ -1,4 +1,5 @@
 //测试更新
+//测试2
 /*
  * @Descripttion: 29. 两数相除
         给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。
@@ -8,7 +9,7 @@
  * @Author: Ye Yating
  * @Date: 2020-05-07 20:34:06
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-07-26 22:32:01
+ * @LastEditTime: 2020-07-26 22:57:55
  */
 #include <algorithm>
 #include <iostream>
