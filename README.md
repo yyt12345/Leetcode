@@ -1,1 +1,1 @@
-This is a place to record daily Leetcode exercises
+This is a repositories to record daily Leetcode exercises
