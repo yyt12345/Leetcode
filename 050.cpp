@@ -1,5 +1,6 @@
 /*
- * @Descripttion: 
+ * @Descripttion: 50. Pow(x, n)
+        实现 pow(x, n) ，即计算 x 的 n 次幂函数。
  * @version: 
  * @Author: Ye Yating
  * @Date: 2020-07-27 22:57:50

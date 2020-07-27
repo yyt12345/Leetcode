@@ -1,5 +1,6 @@
 /*
- * @Descripttion: 
+ * @Descripttion: 47. 全排列 II
+        给定一个可包含重复数字的序列，返回所有不重复的全排列。
  * @version: 
  * @Author: Ye Yating
  * @Date: 2020-07-27 19:11:15
