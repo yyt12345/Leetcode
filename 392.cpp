@@ -9,10 +9,11 @@
  * @Author: Ye Yating
  * @Date: 2020-06-05 11:42:15
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-06-08 14:16:17
+ * @LastEditTime: 2020-07-27 17:51:00
  */ 
 #include <string>
 #include <iostream>
+#include <vector>
 #include <string.h>
 using namespace std;
 //暴力法 双百
@@ -50,6 +51,24 @@ bool isSubsequence2(string s, string t) {
     }
     return dp[sLen-1][tLen-1];
 }
+
+// 执行用时：12 ms, 在所有 C++ 提交中击败了28.33% 的用户
+// 内存消耗：6.5 MB, 在所有 C++ 提交中击败了100.00% 的用户
+bool isSubsequence3(string s,string t){
+    int m=s.size(),n=t.size();
+    vector<vector<bool> > dp(m+1,vector<bool>(n+1,false));
+    dp[0][0]=true;
+    for(int i=0;i<=m;i++){
+        for(int j=1;j<=n;j++){
+            if(i>0){
+                dp[i][j] = dp[i][j-1] || (s[i-1]==t[j-1] && dp[i-1][j-1]);
+            }else{
+                dp[i][j] = dp[i][j-1];
+            }
+        }
+    }
+    return dp[m][n];
+}
 int main(){
-    cout << isSubsequence2("aaaaaaa","bbaaaaa") << endl;
+    cout << isSubsequence3("abc","ahbgdc") << endl;
 }
