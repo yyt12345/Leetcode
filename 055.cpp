@@ -7,7 +7,7 @@
  * @Author: Ye Yating
  * @Date: 2020-07-25 11:35:35
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-07-25 12:07:46
+ * @LastEditTime: 2020-07-28 11:30:24
  */ 
 #include <vector>
 #include <iostream>
@@ -29,7 +29,19 @@ bool canJump(vector<int>& nums) {
     }
     return dp[n-1];
 }
+/** 贪心算法的思路，算出当前可以达到的最大位置，根据最大位置去做出判断 */
+// 执行用时：20 ms, 在所有 C++ 提交中击败了81.00% 的用户
+// 内存消耗：13 MB, 在所有 C++ 提交中击败了8.70% 的用户
+bool canJump2(vector<int>& nums) {
+    int n=nums.size();
+    int farest=nums[0];
+    for(int i=1;i<n;i++){
+        if(i>farest) return false;
+        farest=max(farest,i+nums[i]);
+    }
+    return true;
+}
 int main(){
-    vector<int> nums={2,0,0};
-    cout << canJump(nums) << endl;
+    vector<int> nums={1,2,3};
+    cout << canJump2(nums) << endl;
 }
