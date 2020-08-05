@@ -8,13 +8,14 @@
  * @Author: Ye Yating
  * @Date: 2020-08-04 11:39:21
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-08-04 12:04:12
+ * @LastEditTime: 2020-08-04 14:26:37
  */
+#include <algorithm>
 #include <iostream>
 #include <queue>
 #include <vector>
 using namespace std;
-// 深度优先
+// 宽度优先
 // 执行用时：36 ms, 在所有 C++ 提交中击败了79.94% 的用户
 // 内存消耗：12.3 MB, 在所有 C++ 提交中击败了71.34% 的用户
 class Solution {
@@ -50,12 +51,55 @@ public:
         return res.size() == numCourses ? res : vector<int> {};
     }
 };
+//深度优先
+class Solution2 {
+private:
+    vector<vector<int>> edges;
+    vector<int> visited; //搜索中 1     未搜索  0   已完成 2
+    vector<int> res;
+    bool valid = true;
+
+public:
+    void dfs(int u)
+    {
+        visited[u] = 1;
+        for (int v : edges[u]) {
+            if (!visited[v]) {
+                dfs(v);
+                if (!valid)
+                    return;
+            } else if (visited[v] == 1) {
+                valid = false;
+                return;
+            }
+            visited[u] = 2;
+            res.push_back(u);
+        }
+    }
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites)
+    {
+        edges.resize(numCourses);
+        visited.resize(numCourses);
+        for (const auto& info : prerequisites) {
+            edges[info[1]].push_back(info[0]);
+        }
+        for (int i = 0; i < numCourses && valid; i++) {
+            if (!visited[i])
+                dfs(i);
+        }
+        if (!valid) {
+            return {};
+        }
+        reverse(res.begin(), res.end());
+        return res;
+    }
+};
 int main()
 {
     vector<vector<int>> prerequisties = {
         { 1, 0 }, { 2, 0 }, { 3, 1 }, { 3, 2 }
     };
-    Solution s;
+    Solution2 s;
     vector<int> res = s.findOrder(4, prerequisties);
     for (int a : res) {
         cout << a << " ";
