@@ -1,4 +1,11 @@
 /*
+ * @Descripttion: 
+ * @Author: Ye Yating
+ * @Date: 2020-05-03 17:58:42
+ * @LastEditors: Ye Yating
+ * @LastEditTime: 2020-08-10 11:38:48
+ */
+/*
 696. 计数二进制子串
 给定一个字符串 s，计算具有相同数量0和1的非空(连续)子字符串的数量，并且这些子字符串中的所有0和所有1都是组合在一起的。
 
@@ -11,17 +18,33 @@ using namespace std;
 int countBinarySubstrings(string s)
 {
     int n = 0, pre = 0, cur = 1, len = s.size() - 1;
-    for (int i = 0; i < len; i++)
-    {
+    for (int i = 0; i < len; i++) {
         if (s.at(i) == s.at(i + 1))
             cur++;
-        else
-        {
-            n+=min(pre,cur);
+        else {
+            n += min(pre, cur);
             pre = cur;
             cur = 1;
         }
     }
-    n+=min(pre,cur);
+    n += min(pre, cur);
     return n;
+}
+
+int countBinarySubstrings(string s)
+{
+    int pre = 0, cur = 1;
+    int n = s.size();
+    int res;
+    for (int i = 0; i < n - 1; i++) {
+        if (s[i] == s[i + 1]) {
+            cur++;
+        } else {
+            res += min(cur, pre);
+            pre = cur;
+            cur = 1;
+        }
+    }
+    res += min(cur, pre);
+    return res;
 }
