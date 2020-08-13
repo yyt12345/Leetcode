@@ -7,14 +7,15 @@
  * @Author: Ye Yating
  * @Date: 2020-08-10 11:46:39
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-08-13 16:50:34
+ * @LastEditTime: 2020-08-13 17:37:07
  */
 #include <iostream>
 #include <vector>
 using std::vector;
 class Solution {
 public:
-    //使用两轮二分法搜索
+    // 执行用时：4 ms, 在所有 C++ 提交中击败了99.27% 的用户
+    // 内存消耗：7.5 MB, 在所有 C++ 提交中击败了90.39% 的用户
     bool searchMatrix(vector<vector<int>>& matrix, int target)
     {
         if (matrix.size() == 0)
