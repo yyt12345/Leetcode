@@ -1,12 +1,12 @@
 /*
- * @Descripttion: 99. 恢复二叉搜索树
-        二叉搜索树中的两个节点被错误地交换。
-        请在不改变其结构的情况下，恢复这棵树。
+ * @Descripttion: 78. 子集
+        给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
+        说明：解集不能包含重复的子集。
  * @version: 
  * @Author: Ye Yating
  * @Date: 2020-08-08 10:35:41
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-08-08 11:08:47
+ * @LastEditTime: 2020-08-17 13:52:15
  */
 #include <algorithm>
 #include <iostream>
