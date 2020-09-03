@@ -6,7 +6,7 @@
  * @Author: Ye Yating
  * @Date: 2020-09-01 10:47:07
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-09-01 13:47:46
+ * @LastEditTime: 2020-09-02 10:57:20
  */
 #include <stack>
 #include <vector>
@@ -55,7 +55,7 @@ public:
                 s.push(curr);
                 curr = curr->left;
             }
-            curr = s.top;
+            curr = s.top();
             s.pop();
             res.push_back(curr->val);
             curr = curr->right;
