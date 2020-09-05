@@ -5,7 +5,7 @@
  * @Author: Ye Yating
  * @Date: 2020-08-05 21:17:05
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-08-05 22:54:19
+ * @LastEditTime: 2020-09-05 10:22:22
  */
 #include <iostream>
 #include <string>
@@ -50,9 +50,35 @@ public:
         }
         return res;
     }
+    // 执行用时：0 ms, 在所有 C++ 提交中击败了100.00% 的用户
+    // 内存消耗：6.2 MB, 在所有 C++ 提交中击败了33.39% 的用户
+    string getPermutation2(int n, int k)
+    {
+        string res;
+        vector<bool> ok(n, false);
+        k--;
+        int level = n;
+        while (level) {
+            int factorialN = factorial(--level);
+            int div = k / factorialN;
+            k %= factorialN;
+
+            for (int i = 0; i < n; i++) {
+                if (ok[i])
+                    continue;
+                if (!div) {
+                    res.push_back(i + '1');
+                    ok[i] = 1;
+                    break;
+                }
+                div--;
+            }
+        }
+        return res;
+    }
 };
 int main()
 {
     Solution s;
-    cout << s.getPermutation(4, 9) << endl;
+    cout << s.getPermutation2(3, 3) << endl;
 }
