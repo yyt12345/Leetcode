@@ -5,14 +5,12 @@
  * @Author: Ye Yating
  * @Date: 2020-08-05 21:17:05
  * @LastEditors: Ye Yating
- * @LastEditTime: 2020-09-05 10:22:22
+ * @LastEditTime: 2020-09-05 10:31:59
  */
 #include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
-// 执行用时：0 ms, 在所有 C++ 提交中击败了100.00% 的用户
-// 内存消耗：6 MB, 在所有 C++ 提交中击败了87.46% 的用户
 class Solution {
 private:
     int factorial(int n)
@@ -25,6 +23,8 @@ private:
     }
 
 public:
+    // 执行用时：0 ms, 在所有 C++ 提交中击败了100.00% 的用户
+    // 内存消耗：6 MB, 在所有 C++ 提交中击败了87.46% 的用户
     string getPermutation(int n, int k)
     {
         vector<char> nums(n);
@@ -55,7 +55,7 @@ public:
     string getPermutation2(int n, int k)
     {
         string res;
-        vector<bool> ok(n, false);
+        vector<bool> ok(n);
         k--;
         int level = n;
         while (level) {
