@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-15 09:54:03
- * @LastEditTime: 2020-10-16 09:40:42
+ * @LastEditTime: 2020-10-16 10:22:58
  * @LastEditors: Please set LastEditors
  * @Description: 字符串的排列
  * 输入一个字符串,按字典序打印出该字符串中字符的所有排列。例如输入字符串abc,则按字典序打印出由字符a,b,c所能排列出来的所有字符串abc,acb,bac,bca,cab和cba。
@@ -23,21 +23,20 @@ public:
 // 递归法
     vector<string> Permutation(string str) {
           if(str.size()==0) return res;
-          Permutation(str,0);
+          Permutation1(str,0);
           std::sort(res.begin(),res.end());
           return res;
     }
-    void Permutation(string str,int begin){
+    void Permutation1(string str,int begin){
         if(begin==str.size()){
             res.push_back(str);
             return;
         }
-        // map<char,int> charset;
         int n=str.size();
         for(int i=begin;i<n;i++){
-            if(i!=begin && str[i]==str[i-1]) continue;
+            if(i!=begin && str[i]==str[begin]) continue;
             std::swap(str[i],str[begin]);
-            Permutation(str,begin+1);
+            Permutation1(str,begin+1);
             std::swap(str[i],str[begin]);
         }
         return;
