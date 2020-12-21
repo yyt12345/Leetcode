@@ -1,12 +1,11 @@
-/*
- * @Author: your name
- * @Date: 2020-09-21 09:49:36
- * @LastEditTime: 2020-10-13 09:05:30
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /undefined/home/whh/programming/Leetcode/dependOn.h
+/*** 
+ * @Author: whh
+ * @Date: 2020-12-14 13:07:32
+ * @LastEditTime: 2020-12-16 10:44:03
+ * @LastEditors: whh
+ * @Description: 
+ * @FilePath: /Leetcode/dependOn.h
  */
-
 #ifndef _DEPENDON_H_
 #define _DEPENDON_H_
 
@@ -14,9 +13,14 @@
 
 struct TreeNode {
     int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x)
+        : val(x)
+        , left(nullptr)
+        , right(nullptr)
+    {
+    }
 };
 struct ListNode {
     int val;
@@ -34,13 +38,39 @@ public:
     Node* right;
     Node* next;
 
-    Node() : val(0), left(nullptr), right(nullptr), next(nullptr) {}
+    Node()
+        : val(0)
+        , left(nullptr)
+        , right(nullptr)
+        , next(nullptr)
+    {
+    }
 
-    Node(int _val) : val(_val), left(nullptr), right(nullptr), next(nullptr) {}
+    Node(int _val)
+        : val(_val)
+        , left(nullptr)
+        , right(nullptr)
+        , next(nullptr)
+    {
+    }
 
     Node(int _val, Node* _left, Node* _right, Node* _next)
-        : val(_val), left(_left), right(_right), next(_next) {}
+        : val(_val)
+        , left(_left)
+        , right(_right)
+        , next(_next)
+    {
+    }
 };
-
+struct RandomListNode {
+    int label;
+    struct RandomListNode *next, *random;
+    RandomListNode(int x)
+        : label(x)
+        , next(NULL)
+        , random(NULL)
+    {
+    }
+};
 
 #endif
