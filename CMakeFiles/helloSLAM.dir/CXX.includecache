@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/whh/programming/Leetcode/JZ25.cpp
+nowcoderds.h
+/home/whh/programming/Leetcode/nowcoderds.h
+
+/home/whh/programming/Leetcode/nowcoderds.h
+cstdio
+-
+iostream
+-
+map
+-
+set
+-
+string
+-
+vector
+-
+

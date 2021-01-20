@@ -1,7 +1,7 @@
 /*** 
  * @Author: whh
  * @Date: 2020-12-14 13:07:32
- * @LastEditTime: 2020-12-16 10:44:03
+ * @LastEditTime: 2020-12-29 15:13:57
  * @LastEditors: whh
  * @Description: 
  * @FilePath: /Leetcode/dependOn.h
@@ -67,8 +67,8 @@ struct RandomListNode {
     struct RandomListNode *next, *random;
     RandomListNode(int x)
         : label(x)
-        , next(NULL)
-        , random(NULL)
+        , next(nullptr)
+        , random(nullptr)
     {
     }
 };

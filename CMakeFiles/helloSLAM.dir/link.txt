@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -g  -rdynamic CMakeFiles/helloSLAM.dir/JZ25.cpp.o  -o helloSLAM 
