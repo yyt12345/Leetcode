@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-25 23:51:45
- * @LastEditTime: 2021-01-26 00:33:26
+ * @LastEditTime: 2021-01-26 00:35:09
  * @LastEditors: Please set LastEditors
  * @Description: 剑指 Offer 11. 旋转数组的最小数字
  * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
@@ -30,7 +30,7 @@ public:
         }
         return (numbers[end]<numbers[0])?numbers[end]:numbers[0];
     }
-    //找最小值
+    //找最小值 
     int minArray(vector<int>& numbers) {
         int n=numbers.size();
         if(n==0) return -1;
