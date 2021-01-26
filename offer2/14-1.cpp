@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-26 10:08:12
- * @LastEditTime: 2021-01-26 10:34:32
+ * @LastEditTime: 2021-01-26 23:09:29
  * @LastEditors: Please set LastEditors
  * @Description: 剑指 Offer 14- I. 剪绳子
  * 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n>1并且m>1），每段绳子的长度
@@ -10,6 +10,7 @@
  * @FilePath: /offer2/14.cpp
  */
 #include <vector>
+#include <algorithm>
 using namespace std;
 class Solution {
 public:
@@ -24,5 +25,13 @@ public:
             }
         }
         return dp[n];
+    }
+    int cuttingRope(int n) {
+        if(n<=3) return n-1;
+        int res=1;
+        if(n%3==1) res=pow(3,n/3-1)*4;
+        else if(n%3)res=pow(3,n/3)*(n%3);
+        else res=pow(3,n/3);
+        return res;
     }
 };
